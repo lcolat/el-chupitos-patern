@@ -1,0 +1,11 @@
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\bin\Debug\netcoreapp2.1\payement.deps.json
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\bin\Debug\netcoreapp2.1\payement.runtimeconfig.json
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\bin\Debug\netcoreapp2.1\payement.runtimeconfig.dev.json
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\bin\Debug\netcoreapp2.1\payement.dll
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\bin\Debug\netcoreapp2.1\payement.pdb
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.csprojAssemblyReference.cache
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.AssemblyInfoInputs.cache
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.AssemblyInfo.cs
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.dll
+C:\Users\chris\Desktop\DesignPatterns-master\DotNetCore\payement\obj\Debug\netcoreapp2.1\payement.pdb
