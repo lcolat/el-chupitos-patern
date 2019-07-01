@@ -1,7 +1,6 @@
-using System;
 using System.Collections.Generic;
 
-namespace stock
+namespace el_chupitos_pattern.stock
 {
     public class Stock
     {
@@ -21,8 +20,12 @@ namespace stock
             Item = new Dictionary<string, int>();
         }
         public void RemoveItem(string StockItem, int quantity){
-            Item[StockItem] -= quantity; 
- 
+            if(Item[StockItem] - quantity > 0){
+                Item[StockItem] -= quantity;
+            }
+            else{
+                Console.WriteLine("Quantite insufisante");
+            }
         } 
 
         public void AddItem(string StockItem, int quantity){
@@ -31,6 +34,15 @@ namespace stock
             }
             else{
                 Item.Add(StockItem, quantity);
+            }
+        }
+
+        public bool CheckAvailability(string StockItem, int quantity){
+            if(Item[StockItem] - quantity > 0){
+                return true;
+            }
+            else{
+                return false;
             }
         }
 
