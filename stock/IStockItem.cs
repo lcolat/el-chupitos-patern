@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-
-namespace stock
+namespace el_chupitos_pattern.stock
 {
     interface IStockItem {
         string Name { get; set;}

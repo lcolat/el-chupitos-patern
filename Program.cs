@@ -3,6 +3,7 @@ using System.Text;
 using el_chupitos_pattern.Drink.cocktail;
 using el_chupitos_pattern.Drink.ingredient;
 using el_chupitos_pattern.payment;
+using el_chupitos_pattern.stock;
 
 namespace el_chupitos_pattern
 {
@@ -46,6 +47,12 @@ namespace el_chupitos_pattern
             limeExtra.AddExtra(1);
             limeExtra.Display();
             pinaColada.Display();
+            Console.WriteLine("DEPART \n \n");
+            Stock s = new Stock();
+            IStockItem C = new Confiture("fraise",10);
+            s.AddItem("fraise", 6);
+            Console.WriteLine(s.Item);
+            Console.WriteLine("\n\nFIN");
         }
     }
 }
