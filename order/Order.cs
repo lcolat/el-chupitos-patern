@@ -1,9 +1,10 @@
 using System.Collections.Generic;
+using System;
 using el_chupitos_pattern.drink;
 
 namespace el_chupitos_pattern.order
 {
-    public class Order
+    public class Order : IComponent
     {
         public List<IDrink> drinks;
         private IOrderState state;
@@ -26,6 +27,18 @@ namespace el_chupitos_pattern.order
         public void Action()
         {
             this.state.Action(this);
+        }
+
+        public double GetPrice()
+        {
+            double price = 0;
+
+            foreach (IDrink drink in this.drinks)
+            {
+                price += drink.GetPrice();
+            }
+
+            return price;
         }
     }
 }

@@ -63,6 +63,8 @@ namespace el_chupitos_pattern
             order.AddDrink(limeExtra);
             order.AddDrink(pinaColada);
 
+            Console.WriteLine("Order price : " + order.GetPrice());
+
             order.SetState(new PendingOrder());
             order.Action();
 
