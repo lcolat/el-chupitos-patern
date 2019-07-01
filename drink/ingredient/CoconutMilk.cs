@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
 using el_chupitos_pattern.Drink.cocktail;
+using el_chupitos_pattern.stock;
 
 namespace el_chupitos_pattern.Drink.ingredient
 {
-    public class CoconutMilk:IIngredient
+    public class CoconutMilk:IIngredient,IStockItem
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
         public ICocktail cocktailComponent { get; }
@@ -31,15 +32,15 @@ namespace el_chupitos_pattern.Drink.ingredient
             return cocktailComponent.GetPrice() + Quantity * Price;
         }
 
-        public void AddExtra(int _quantity)
+        public void AddExtra(int quantity)
         {
-            Quantity = _quantity;
+            Quantity = quantity;
             if (cocktailComponent.Ingredients.ContainsKey(Name))
             {
-                cocktailComponent.Ingredients[Name] += _quantity;
+                cocktailComponent.Ingredients[Name] += quantity;
             }else
             {
-                cocktailComponent.Ingredients.Add(Name,_quantity);
+                cocktailComponent.Ingredients.Add(Name,quantity);
             }
 
             cocktailComponent.Price += Quantity * Price;
