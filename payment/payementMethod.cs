@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace el_chupitos_pattern.payment
 {

@@ -1,38 +1,51 @@
 ﻿using System;
+using System.Text;
+using el_chupitos_pattern.Drink.cocktail;
+using el_chupitos_pattern.Drink.ingredient;
 using el_chupitos_pattern.payment;
 
-namespace payement
+namespace el_chupitos_pattern
 {
     class Program
     {
         static void Main(string[] args)
         {
-            PaymentMethod payementMethod = new PaymentMethod();
+            Console.OutputEncoding = Encoding.UTF8;
+            PaymentMethod paymentMethod = new PaymentMethod();
 
             Console.WriteLine("Indiquez le prix");
             var method = Console.ReadLine();
-            payementMethod.setMethod(method);
+            paymentMethod.setMethod(method);
 
             Console.WriteLine("Quel type de payement utiliser?");
             int input = int.Parse(Console.ReadKey().KeyChar.ToString());
 
             switch(input){
                 case 1:
-                    payementMethod.setPaymentStrategy(new Cash());
-                    payementMethod.Payement();
+                    paymentMethod.setPaymentStrategy(new Cash());
+                    paymentMethod.Payement();
                     break;
                 case 2:
-                    payementMethod.setPaymentStrategy(new CreditCard());
-                    payementMethod.Payement();
+                    paymentMethod.setPaymentStrategy(new CreditCard());
+                    paymentMethod.Payement();
                     break;
                 case 3:
-                    payementMethod.setPaymentStrategy(new Cheque());
-                    payementMethod.Payement();
+                    paymentMethod.setPaymentStrategy(new Cheque());
+                    paymentMethod.Payement();
                     break;
                 default:
                     Console.WriteLine("Selection invalide");
                     break;
             }
+            PinaColada pinaColada = new PinaColada();
+            pinaColada.Display();
+            Pineapple pinappleExtra = new Pineapple(pinaColada);
+            pinappleExtra.AddExtra(2);
+            pinappleExtra.Display();
+            Lime limeExtra = new Lime(pinaColada);
+            limeExtra.AddExtra(1);
+            limeExtra.Display();
+            pinaColada.Display();
         }
     }
 }
