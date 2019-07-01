@@ -5,6 +5,7 @@ using el_chupitos_pattern.Drink.ingredient;
 using el_chupitos_pattern.drink.simpleDrink;
 using el_chupitos_pattern.payment;
 using el_chupitos_pattern.stock;
+using el_chupitos_pattern.order;
 
 namespace el_chupitos_pattern
 {
@@ -57,6 +58,19 @@ namespace el_chupitos_pattern
             stock.AddItem("fraise", 6);
             Console.WriteLine(stock.Item);
             Console.WriteLine("\n\nFIN");
+            
+            Order order = new Order();
+            order.AddDrink(limeExtra);
+            order.AddDrink(pinaColada);
+
+            order.SetState(new PendingOrder());
+            order.Action();
+
+            order.SetState(new OrderDelivery());
+            order.Action();
+
+            order.SetState(new CompletedOrder());
+            order.Action();
         }
 
         private static void InitStock(Stock stock)

@@ -3,7 +3,7 @@ using System.Text;
 
 namespace el_chupitos_pattern.payment
 {
-    abstract class PaymentStrategy{
+    abstract class PaymentStrategy {
         public abstract void Payement(string method);
     }
 
