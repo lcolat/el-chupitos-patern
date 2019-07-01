@@ -167,3 +167,9 @@ Attach files by dragging & dropping, selecting or pasting them.
     Blog
     About
 
+
+\.idea/\.idea\.el-chupitos-pattern\.dir/\.idea/
+
+\.vscode/
+
+\.idea/\.idea\.el-chupitos-pattern\.dir/
