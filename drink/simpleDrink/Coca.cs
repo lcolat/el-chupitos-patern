@@ -1,42 +1,44 @@
 using System;
 using System.Collections.Generic;
 using el_chupitos_pattern.Drink.cocktail;
+using el_chupitos_pattern.Drink.ingredient;
 using el_chupitos_pattern.stock;
 
-namespace el_chupitos_pattern.Drink.ingredient
+namespace el_chupitos_pattern.drink.simpleDrink
 {
-    public class Pineapple:IIngredient,IStockItem
+    public class Coca: IIngredient,IStockItem
     {
-        public const string NAME = "Pineapple";
+        public const string NAME = "Coca";
         public string Name { get; set; }
         public double Price { get; set; }
-        public int Quantity { get; set; }
         public ICocktail cocktailComponent { get; }
+        public int Quantity { get; set; }
         public Dictionary<string, int> Ingredients { get; }
         public Stock Stock { get; set; }
-        public Pineapple(Stock stock)
+
+        public Coca(Stock stock)
         {
             Name = NAME;
-            Price = 2.5;
+            Price = 5.0;
             Stock = stock;
         }
-        public Pineapple(ICocktail cocktailComponent, Stock stock)
+        public Coca(ICocktail cocktailComponent, Stock stock)
         {
             Name = NAME;
-            Price = 2.5;
+            Price = 5.0;
             this.cocktailComponent = cocktailComponent;
             Stock = stock;
         }
         public void Display()
         {
-            Console.WriteLine(Quantity + " " + Name + " à " + Quantity * Price + " €");
+            Console.WriteLine(Name + " " + Price + " €");
         }
 
         public double GetPrice()
         {
-            return cocktailComponent.GetPrice();
+            return Price;
         }
-
+        
         public void AddExtra(int quantity)
         {
             Quantity = quantity;
@@ -47,9 +49,9 @@ namespace el_chupitos_pattern.Drink.ingredient
             {
                 cocktailComponent.Ingredients.Add(Name,quantity);
             }
-
-            cocktailComponent.Price += Quantity * Price;
+            cocktailComponent.Price = cocktailComponent.Price + Quantity * Price;
             Stock.RemoveItem(Name, quantity);
         }
+        
     }
 }

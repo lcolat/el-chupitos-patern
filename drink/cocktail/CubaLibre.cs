@@ -6,21 +6,21 @@ using el_chupitos_pattern.stock;
 
 namespace el_chupitos_pattern.Drink.cocktail
 {
-    public class PinaColada:ICocktail
+    public class CubaLibre:ICocktail
     {
         public string Name { get; }
         public double Price { get; set; }
         public Dictionary<string, int> Ingredients { get; }
         public Stock Stock { get; set; }
 
-        public PinaColada(Stock stock)
+        public CubaLibre(Stock stock)
         {
-            Name = "Piña Colada";
+            Name = "Cuba Libre";
             Price = 6.0;
-            Ingredients = new Dictionary<string, int> {{Pineapple.NAME, 2}, {CoconutMilk.NAME, 4}, {Rum.NAME, 2}};
+            Ingredients = new Dictionary<string, int> {{Lime.NAME, 1}, {Coca.NAME, 2}, {Rum.NAME, 2}};
             Stock = stock;
-            stock.RemoveItem(Pineapple.NAME, 2);
-            stock.RemoveItem(CoconutMilk.NAME, 4);
+            stock.RemoveItem(Lime.NAME, 1);
+            stock.RemoveItem(Coca.NAME, 1);
             stock.RemoveItem(Rum.NAME, 2);
         }
         public void Display()
